@@ -51,8 +51,20 @@ public class MySimpleLinkedList<T> implements Iterable<T> {
     }
 
     public T get(int index) {
-        // TODO
-        return null;
+        int i = 1;
+
+        if(index < 1 || index >= this.size) {
+            return null;
+        }
+
+        Iterator<T> iterator = this.iterator();
+        while(index != i){
+
+            T next = iterator.next();
+            i++;
+        }
+        return iterator.next();
+
     }
 
     public int size() {

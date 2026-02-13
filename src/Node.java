@@ -2,6 +2,7 @@ public class Node<T> {
 
     private T info;
     private Node<T> next;
+    private int index;
 
     public Node() {
         this.info = null;
@@ -27,6 +28,14 @@ public class Node<T> {
 
     public void setInfo(T info) {
         this.info = info;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     @Override

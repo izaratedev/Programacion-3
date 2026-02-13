@@ -34,11 +34,16 @@ public class Main {
 
         //To String con iterator
 
-        Iterator<Integer> iterator = list.iterator();
+        //Iterator<Integer> iterator = list.iterator();
 
+        /*
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
+         */
+        System.out.println(list.size());
+
 
     }
 }
