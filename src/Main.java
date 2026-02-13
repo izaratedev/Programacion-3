@@ -44,6 +44,19 @@ public class Main {
          */
         System.out.println(list.size());
 
+        /*
+        Ejercicio 2
+
+        Considerando la implementación de la lista vinculada realizada en el ejercicio anterior, comparar la
+        complejidad computacional contra un array en las siguientes operaciones:
+
+        1. Insertar al principio. La complejidad computacional es O(1).
+        2. Buscar un elemento en una posición. La complejidad computacional es O(n).
+        3. Determinar la cantidad de elementos. La complejidad computacional es O(1).
+        4. Borrar un elemento de una posición determinada. O(n)
+
+        */
+
 
     }
 }
