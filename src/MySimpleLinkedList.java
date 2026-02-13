@@ -9,15 +9,19 @@ String toString). Agregar también el método: T get(index).
 public class MySimpleLinkedList<T> {
 
     private Node<T> first;
+    private int size;
 
     public MySimpleLinkedList() {
         this.first = null;
+        this.size = 0;
     }
 
     public void insertFront(T info) {
         Node<T> tmp = new Node<T>(info,null);
         tmp.setNext(this.first);
         this.first = tmp;
+
+        this.size++;
     }
 
     public T extractFront() {
@@ -26,6 +30,10 @@ public class MySimpleLinkedList<T> {
             Node<T> tmp = this.first;
 
             this.first = this.first.getNext();
+
+            if(this.first != null) {
+                this.size--;
+            }
 
             return tmp.getInfo();
         }
@@ -37,8 +45,7 @@ public class MySimpleLinkedList<T> {
     }
 
     public boolean isEmpty() {
-        // TODO
-        return false;
+        return this.first == null;
     }
 
     public T get(int index) {
@@ -47,8 +54,7 @@ public class MySimpleLinkedList<T> {
     }
 
     public int size() {
-        // TODO
-        return 0;
+        return this.size;
     }
 
     @Override
