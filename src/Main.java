@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -13,7 +15,7 @@ public class Main {
 
         //Ejercicio 1 ExtractFront()
 
-      System.out.println(list.extractFront());
+      //System.out.println(list.extractFront());
 /*
         System.out.println(list.extractFront());
 
@@ -24,11 +26,19 @@ public class Main {
 
         //Ejercicio 1 isEmpty()
 
-        System.out.println(list.isEmpty());
+        //System.out.println(list.isEmpty());
 
         //Ejercicio 1 size()
 
-        System.out.println(list.size());
+        //System.out.println(list.size());
+
+        //To String con iterator
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
 
     }
 }

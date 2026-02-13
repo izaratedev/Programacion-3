@@ -6,7 +6,9 @@ String toString). Agregar también el método: T get(index).
 
  */
 
-public class MySimpleLinkedList<T> {
+import java.util.Iterator;
+
+public class MySimpleLinkedList<T> implements Iterable<T> {
 
     private Node<T> first;
     private int size;
@@ -59,8 +61,13 @@ public class MySimpleLinkedList<T> {
 
     @Override
     public String toString() {
-        // TODO
-        return "";
+        return this.first.toString();
     }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Myiterator<>(this.first);
+    }
+
 
 }

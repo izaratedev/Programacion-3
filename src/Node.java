@@ -29,4 +29,8 @@ public class Node<T> {
         this.info = info;
     }
 
+    @Override
+    public String toString() {
+        return "Node{" + "info=" + info +'}';
+    }
 }
