@@ -71,6 +71,30 @@ public class MySimpleLinkedList<T> implements Iterable<T> {
         return this.size;
     }
 
+    public int indexOf(T info) {
+        //Me pasan por parametro la info.
+        int index = 1;
+
+        //variable para llevar el nodo
+        Node<T> tmp = this.first;
+
+        if(tmp == null) {
+            return -1;
+        }
+
+        while(tmp.getInfo() != info && index < this.size) {
+            tmp = tmp.getNext();
+            index++;
+        }
+        if(tmp.getInfo() == info) {
+            return index;
+        }
+
+        return -1;
+
+    }
+
+
     @Override
     public String toString() {
         return this.first.toString();

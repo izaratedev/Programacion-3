@@ -8,10 +8,10 @@ public class Main {
         MySimpleLinkedList list = new MySimpleLinkedList();
 
 
-
-        list.insertFront(2);
-        list.insertFront(3);
-        list.insertFront(4);
+/*
+        list.insertFront(2); //pos 3
+        list.insertFront(3); //pos 2
+        list.insertFront(4); //pos 1
 
         //Ejercicio 1 ExtractFront()
 
@@ -42,7 +42,6 @@ public class Main {
         }
 
          */
-        System.out.println(list.size());
 
         /*
         Ejercicio 2
@@ -55,8 +54,15 @@ public class Main {
         3. Determinar la cantidad de elementos. La complejidad computacional es O(1).
         4. Borrar un elemento de una posición determinada. O(n)
 
-        */
+         */
+        /*
+        Ejercicio 3
+        A la implementación de la clase Lista realizada en el ejercicio 1, agregue un método
+        int indexOf(T), que reciba un elemento y retorne el índice donde está almacenado ese
+        elemento, o -1 si el elemento no existe en la lista.
 
+         */
 
+        System.out.println(list.indexOf(2));
     }
 }
