@@ -148,6 +148,25 @@ public class Main {
         System.out.println(orderList5);
 
 
+
+        /*
+        //--------------------------------------------------------------------------------- Ejercicio 7 ----------------------------------------------------------------------------------//
+        Considerando la implementación de Lista del ejercicio 1, realice una Lista doblemente vinculada.
+        ¿Podemos ahora revisar la implementación inicial de nuestra lista para extender su funcionalidad
+        y/o bajar la complejidad de los métodos ya implementados?
+         */
+
+        MyDoubleLinkedList<Integer> doubleList = new MyDoubleLinkedList<>();
+
+        doubleList.insertFront(10);
+        doubleList.insertFront(8);
+        doubleList.insertFront(5);
+
+        System.out.println(doubleList);
+
+        System.out.println(doubleList.getIndex(2));
+
+
     }
 
     private static MySimpleLinkedList<Integer> elementsNotEqualToTheSecond(MySimpleLinkedList<Integer> orderList1, MySimpleLinkedList<Integer> orderList2) {

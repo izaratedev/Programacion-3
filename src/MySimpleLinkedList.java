@@ -74,18 +74,18 @@ public class MySimpleLinkedList<T extends Comparable <T>> implements Iterable<T>
     }
 
     public T get(int index) {
-        int i = 1;
 
-        if(index < 1 || index >= this.size) {
+        if(index < 0 || index >= this.size) {
             return null;
         }
 
         Iterator<T> iterator = this.iterator();
-        while(index != i){
 
-            T next = iterator.next();
-            i++;
+        for (int i = 0; i < index; i++) {
+
+            iterator.next();
         }
+
         return iterator.next();
 
     }
@@ -96,7 +96,7 @@ public class MySimpleLinkedList<T extends Comparable <T>> implements Iterable<T>
 
     public int indexOf(T info) {
         //Me pasan por parametro la info.
-        int index = 1;
+        int index = 0;
 
         //variable para llevar el nodo
         Node<T> tmp = this.first;
@@ -105,7 +105,7 @@ public class MySimpleLinkedList<T extends Comparable <T>> implements Iterable<T>
             return -1;
         }
 
-        while(tmp.getInfo() != info && index < this.size) {
+        while(tmp.getInfo() != info && index < this.size-1) {
             tmp = tmp.getNext();
             index++;
         }
