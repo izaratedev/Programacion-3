@@ -41,7 +41,7 @@ public class MyDoubleLinkedList <T> implements Iterable<T> {
         return this.first == null;
     }
     // me pasan el indice y lo busco
-    public T getIndex(int index) {
+    public T get(int index) {
 
         if(index < 0 || index >= size) {
             return null;

@@ -164,7 +164,7 @@ public class Main {
 
         System.out.println(doubleList);
 
-        System.out.println(doubleList.getIndex(2));
+        System.out.println(doubleList.get(2));
 
 
     }
