@@ -8,7 +8,7 @@ String toString). Agregar también el método: T get(index).
 
 import java.util.Iterator;
 
-public class MySimpleLinkedList<T> implements Iterable<T> {
+public class MySimpleLinkedList<T extends Comparable <T>> implements Iterable<T> {
 
     private Node<T> first;
     private int size;
@@ -24,6 +24,29 @@ public class MySimpleLinkedList<T> implements Iterable<T> {
         this.first = tmp;
 
         this.size++;
+    }
+
+    public void insertOrdered(T info) {
+        Node<T> tmp = this.first;
+        Node<T> actual = new Node<T>(info,null);
+
+        if(tmp == null || tmp.getInfo().compareTo(info) >= 0 ) {
+            insertFront(info);
+        } else if(tmp.getNext() == null) {
+            tmp.setNext(actual);
+        } else {
+            while(tmp.getNext().getInfo().compareTo(info) <= 0) {
+                tmp = tmp.getNext();
+            }
+            if(tmp.getNext() == null) {
+                tmp.setNext(actual);
+            } else {
+                Node<T> aux = tmp.getNext();
+                tmp.setNext(actual);
+                actual.setNext(aux);
+            }
+
+        }
     }
 
     public T extractFront() {
@@ -94,10 +117,24 @@ public class MySimpleLinkedList<T> implements Iterable<T> {
 
     }
 
-
     @Override
     public String toString() {
-        return this.first.toString();
+    StringBuilder sb = new StringBuilder();
+
+    sb.append("[");
+
+    Iterator<T> iterator = this.iterator();
+
+    while(iterator.hasNext()) {
+        sb.append(iterator.next());
+        if(iterator.hasNext()) {
+            sb.append(", ");
+        }
+    }
+
+    sb.append("]");
+    return sb.toString();
+
     }
 
     @Override
